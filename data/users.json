@@ -1,0 +1,24 @@
+[
+  {
+    "username": "jackp",
+    "password": "$2a$08$/Hy0SS1FZUK8JnyctYKzS.BqDV2WFgPZYlj37Ia/pqkcu7rGdEiS6",
+    "messages": [
+      {
+        "sender": "user",
+        "text": "jack"
+      },
+      {
+        "sender": "bot",
+        "text": "🤖 AI says: I heard you say \"jack\""
+      },
+      {
+        "sender": "user",
+        "text": "hello"
+      },
+      {
+        "sender": "bot",
+        "text": "🤖 AI says: I heard you say \"hello\""
+      }
+    ]
+  }
+]
