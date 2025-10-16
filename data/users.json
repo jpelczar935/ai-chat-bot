@@ -18,6 +18,48 @@
       {
         "sender": "bot",
         "text": "🤖 AI says: I heard you say \"hello\""
+      },
+      {
+        "sender": "user",
+        "text": "hello"
+      },
+      {
+        "sender": "bot",
+        "text": "🤖 AI says: I heard you say \"hello\""
+      },
+      {
+        "sender": "user",
+        "text": "fart"
+      },
+      {
+        "sender": "bot",
+        "text": "🤖 AI says: I heard you say \"fart\""
+      },
+      {
+        "sender": "user",
+        "text": "hello"
+      },
+      {
+        "sender": "bot",
+        "text": "You said: \"hello\""
+      }
+    ],
+    "milesHistory": [
+      {
+        "date": "10/16/2025",
+        "miles": 5
+      },
+      {
+        "date": "10/16/2025",
+        "miles": 6
+      },
+      {
+        "date": "10/16/2025",
+        "miles": 8
+      },
+      {
+        "date": "10/16/2025",
+        "miles": 10
       }
     ]
   }
