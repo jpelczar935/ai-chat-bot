@@ -42,6 +42,22 @@
       {
         "sender": "bot",
         "text": "You said: \"hello\""
+      },
+      {
+        "sender": "user",
+        "text": "jack"
+      },
+      {
+        "sender": "bot",
+        "text": "You said: \"jack\""
+      },
+      {
+        "sender": "user",
+        "text": "FART"
+      },
+      {
+        "sender": "bot",
+        "text": "LOG YOUR MILES BELOW"
       }
     ],
     "milesHistory": [
@@ -60,6 +76,40 @@
       {
         "date": "10/16/2025",
         "miles": 10
+      },
+      {
+        "date": "10/17/2025",
+        "miles": 5
+      }
+    ]
+  },
+  {
+    "username": "andrew.jack935@gmail.com",
+    "password": null,
+    "messages": [
+      {
+        "sender": "user",
+        "text": "jack",
+        "time": "2025-10-17T17:58:24.378Z"
+      },
+      {
+        "sender": "bot",
+        "text": "LOG YOUR MILES BELOW",
+        "time": "2025-10-17T17:58:24.378Z"
+      }
+    ],
+    "milesHistory": [
+      {
+        "date": "10/17/2025",
+        "miles": 5
+      },
+      {
+        "date": "10/17/2025",
+        "miles": 8
+      },
+      {
+        "date": "10/17/2025",
+        "miles": 12
       }
     ]
   }

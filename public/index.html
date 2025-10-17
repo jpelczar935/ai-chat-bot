@@ -5,23 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Chat Bot</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Firebase (compat) so we can use global `firebase` without module script -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
 </head>
 <body>
   <div id="app">
     <h1>AI Chat Bot</h1>
 
+    <!-- Local auth (username/password) -->
     <div id="auth-section">
-      <h2>Login</h2>
+      <h2>Login (Without Authentication)</h2>
       <input type="text" id="login-username" placeholder="Username">
       <input type="password" id="login-password" placeholder="Password">
       <button id="login-btn">Login</button>
       <p id="login-msg"></p>
 
-      <h2>Signup</h2>
+      <h2>Signup (Without Authentication)</h2>
       <input type="text" id="signup-username" placeholder="New Username">
       <input type="password" id="signup-password" placeholder="New Password">
       <button id="signup-btn">Signup</button>
       <p id="signup-msg"></p>
+
+      <hr>
+
+      <!-- Firebase auth (email/password) -->
+      <h3>Or sign in with email</h3>
+      <input type="email" id="fb-email" placeholder="Email">
+      <input type="password" id="fb-password" placeholder="Password">
+      <button id="fb-login-btn">Firebase Login</button>
+      <button id="fb-register-btn">Firebase Register</button>
+      <p id="fb-msg"></p>
     </div>
 
     <div id="chat-section" style="display:none;">
@@ -39,8 +53,6 @@
       <p id="total-miles">Total miles: 0</p>
       <ul id="miles-history"></ul>
     </div>
-
-
   </div>
 
   <script src="app.js"></script>
