@@ -96,6 +96,16 @@
         "sender": "bot",
         "text": "LOG YOUR MILES BELOW",
         "time": "2025-10-17T17:58:24.378Z"
+      },
+      {
+        "sender": "user",
+        "text": "hey",
+        "time": "2025-10-19T17:35:25.351Z"
+      },
+      {
+        "sender": "bot",
+        "text": "LOG YOUR MILES BELOW",
+        "time": "2025-10-19T17:35:25.351Z"
       }
     ],
     "milesHistory": [
