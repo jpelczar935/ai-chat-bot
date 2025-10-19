@@ -40,6 +40,11 @@ try {
 } catch (err) {
   console.error("Failed to initialize Firebase Admin:", err.message);
 }
+if (admin) {
+  console.log("✅ Firebase Admin is loaded and ready!");
+} else {
+  console.log("❌ Firebase Admin is still NOT loaded!");
+}
 
 
 // Middleware
