@@ -12,28 +12,35 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || "supersecretkey";
 
-// Optional Firebase Admin (for verifying Firebase ID tokens)
-// If you want Firebase sign-in to work, download a service account JSON and put it as serviceAccountKey.json in project root.
-// If it's missing, Firebase routes will return a helpful error.
 let admin = null;
-const serviceAccountPath = path.join(__dirname, "serviceAccountKey.json");
-if (fs.existsSync(serviceAccountPath)) {
-  try {
-    admin = require("firebase-admin");
-    const serviceAccount = require(serviceAccountPath);
-    if (!admin.apps.length) {
-      admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount),
-      });
-      console.log("Firebase Admin initialized.");
-    }
-  } catch (err) {
-    console.warn("Failed to initialize Firebase Admin:", err.message);
-    admin = null;
+
+try {
+  const firebaseAdmin = require("firebase-admin");
+  let serviceAccount = null;
+
+  if (process.env.FIREBASE_SERVICE_ACCOUNT) {
+    // Load from environment variable (Render)
+    serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+    console.log("Loaded Firebase Admin from environment variable.");
+  } else if (fs.existsSync(path.join(__dirname, "serviceAccountKey.json"))) {
+    // Fallback for local testing
+    serviceAccount = require(path.join(__dirname, "serviceAccountKey.json"));
+    console.log("Loaded Firebase Admin from local serviceAccountKey.json file.");
   }
-} else {
-  console.log("No serviceAccountKey.json found — Firebase login will be disabled until you add it.");
+
+  if (serviceAccount) {
+    firebaseAdmin.initializeApp({
+      credential: firebaseAdmin.credential.cert(serviceAccount),
+    });
+    admin = firebaseAdmin;
+    console.log("Firebase Admin initialized successfully.");
+  } else {
+    console.warn("No Firebase credentials found — Firebase login disabled.");
+  }
+} catch (err) {
+  console.error("Failed to initialize Firebase Admin:", err.message);
 }
+
 
 // Middleware
 app.use(express.json());
